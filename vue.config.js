@@ -5,5 +5,5 @@ module.exports = {
               'styles': './src/assets/styles'
           }
       }
-    }
+     }
   };
