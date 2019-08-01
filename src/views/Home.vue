@@ -7,8 +7,8 @@
 
 <script>
 // @ is an alias to /src
-import HomeHeader from '@/components/HomeHeader.vue'
-import Swiper from '@/components/Swiper.vue'
+import HomeHeader from '@/components/HomeHeader'
+import Swiper from '@/components/Swiper'
 
 export default {
   name: 'home',
