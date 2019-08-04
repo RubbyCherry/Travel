@@ -1,4 +1,4 @@
-# travel-project 高肥肥
+# travel-project 
 
 ## Project setup
 ```
