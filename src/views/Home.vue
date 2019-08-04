@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      this.$axios.get('/mock/index.json')
+      this.$axios.get('/data/index')
       .then(res=>{
         res=res.data;
         if(res.ret && res.data){

@@ -1,3 +1,6 @@
+
+import Mock from 'mockjs'
+let data=
 {
     "ret": true,
     "data": {
@@ -37,4 +40,7 @@
             {"id":"05","imgUrl":"http://img1.qunarzz.com/sight/source/1505/e2/2a63e38b84bc8e.jpg_r_640x214_679f0d37.jpg","title":"玩转主题乐园","desc":"乐园，与青春作伴"}
         ]
     }
-}
+};
+
+
+Mock.mock('/data/index', 'get', data) // 根据数据模板生成模拟数据
