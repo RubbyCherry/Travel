@@ -16,31 +16,19 @@
 <script>
 export default {
     name: 'HomeIcons',
+    props: ['icons'],
     data () {
         return{
             swiperOption: {
                 pagination: '.swiper-pagination',
                 autoplayDisableOnInteraction: true
-            }, 
-            iconList: [
-                {id: '01',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',desc: '酒店'},
-                {id: '02',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/flight.png',desc: '飞机票'},
-                {id: '03',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/package.png',desc: '度假'},
-                {id: '04',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/train.png',desc: '火车票'},
-                {id: '05',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/piao.png',desc: '景点门票'},
-                {id: '06',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/group.png',desc: '特惠酒店'},
-                {id: '07',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/bargainflight.png',desc: '特价机票'},
-                {id: '08',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/inn.png',desc: '客栈'},
-                {id: '09',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/haiwai.png',desc: '海外酒店'},
-                {id: '10',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/kezhan.png',desc: '民宿'},
-                {id: '11',imgUrl: 'https://s.qunarzz.com/homenode/images/touchheader/bus.png',desc: '汽车票船票'},   
-            ]
+            }
         }
     },    
     computed: {
         pages () {
             const pages=[]
-            this.iconList.forEach((item,index)=>{
+            this.icons.forEach((item,index)=>{
                 const page=Math.floor(index/10)
                 if(!pages[page]){
                     pages[page]=[]
