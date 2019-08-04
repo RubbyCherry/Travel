@@ -9,6 +9,7 @@
                     <p class="icon-desc">{{item.desc}}</p>
                 </div>
             </swiper-slide>
+            <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
     </div>
 </template>
@@ -87,5 +88,7 @@ export default {
             line-height: 1.32rem 
             text-align: center
             color: $darkTextColor
-            ellipsis()      
+            ellipsis()
+    .swiper-pagination
+        display: none      
 </style>
