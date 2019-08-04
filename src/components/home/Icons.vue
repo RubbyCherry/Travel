@@ -9,7 +9,7 @@
                     <p class="icon-desc">{{item.desc}}</p>
                 </div>
             </swiper-slide>
-            <div class="swiper-pagination"  slot="pagination"></div>
+            <div class="swiper-pagination"  slot="paginationHide"></div>
         </swiper>
     </div>
 </template>
@@ -21,8 +21,8 @@ export default {
     data () {
         return{
             swiperOption: {
-                pagination: '.swiper-pagination',
-                autoplayDisableOnInteraction: true
+                paginationHide: '.swiper-pagination',
+                // autoplayDisableOnInteraction: true
             }
         }
     },    
@@ -76,7 +76,5 @@ export default {
             line-height: 1.32rem 
             text-align: center
             color: $darkTextColor
-            ellipsis()
-    .swiper-pagination
-        display: none      
+            ellipsis()     
 </style>
