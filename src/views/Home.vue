@@ -15,10 +15,7 @@ import HomeSwiper from '@/components/home/Swiper'
 import HomeIcons from '@/components/home/Icons'
 import HomeRecommend from '@/components/home/Recommend'
 import HomeWeekend from '@/components/home/Weekend'
-import axios from 'axios'
-import Vue from 'vue'
 
-Vue.prototype.$axios=axios;
 export default {
   name: 'home',
   components: {

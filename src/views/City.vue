@@ -2,8 +2,8 @@
   <div>
     <CityHeader/>
     <CitySearch/>
-    <CityList/>
-    <Alphabet/>
+    <CityList :cities="cities" :hotCities="hotCities"/>
+    <Alphabet :cities="cities"/>
   </div>
 </template>
 
@@ -20,6 +20,27 @@ export default {
     CitySearch,
     CityList,
     Alphabet
+  },
+  data () {
+    return{
+      cities: {},
+      hotCities: []
+    }
+  },
+  methods:{
+    getCityInfo(){
+      this.$axios.get('/data/city')
+      .then(res=>{
+        res=res.data;
+        if(res.ret && res.data){
+          this.cities=res.data.cities
+          this.hotCities=res.data.hotCities
+        }
+      })
+    }
+  },
+  mounted () {
+    this.getCityInfo();
   }
 }
 </script>
