@@ -2,7 +2,6 @@ let homeData=
 {
     "ret": true,
     "data": {
-        "city": "成都",
         "swiperList":[
             {"id": "01","imgUrl": "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/b72df47942fb28fcd7bf481f01e785f5.jpg"},
             {"id": "02","imgUrl": "https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/3f5ff03fa0c024b930f515e63ae2c702.jpg_945x288_7dff4510.jpg"},
