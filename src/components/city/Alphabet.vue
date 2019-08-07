@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { clearTimeout, setTimeout } from 'timers';
+import { setTimeout } from 'timers';
 export default {
     name: 'Alphabet',
     props: {
@@ -27,7 +27,7 @@ export default {
         }
     },
     updated () {
-        this.startY = this.$refs['A'][0].offsetTop;
+        this.startY = this.$refs['A'][0].offsetTop
     },
     computed: {
         letters () {
@@ -47,17 +47,16 @@ export default {
         },
         handleTouchMove (e) {
             if(this.touchStatus){
-                if(this.timer){
+                if (this.timer) {
                     clearTimeout(this.timer)
-                }else{
-                    this.timer = setTimeout(()=>{
-                        const touchY = e.touches[0].clientY-90.83;
-                        const index = Math.floor((touchY-this.startY) / 19);
-                        if(index >= 0 && index < this.letters.length){
-                        this.$emit('change', this.letters[index]) 
-                        }
-                    },16)
                 }
+                this.timer=setTimeout(()=>{
+                    const touchY = e.touches[0].clientY-90.83;
+                    const index = Math.floor((touchY-this.startY) / 19);
+                    if(index >= 0 && index < this.letters.length){
+                    this.$emit('change', this.letters[index]) 
+                    }
+                },16)
                      
             }
         },
