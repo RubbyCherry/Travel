@@ -10,10 +10,12 @@ import axios from 'axios'
 import store from './store'
 
 Vue.config.productionTip = false
-fastClick.attach(document.body)
+fastClick.attach(document.getElementById('app'))
 Vue.use(VueAwesomeSwiper)
 require('../mock')
 Vue.prototype.$axios=axios;
+
+if ('addEventListener' in document) {      document.addEventListener('DOMContentLoaded', function() {          fastClick.attach(document.body);      }, false);  }
 
 new Vue({
   router,

@@ -1,15 +1,16 @@
 <template>
-    <div class="container">
+    <div class="container" @click="handleGallaryClick">
         <div class="wrapper">
             <swiper :options="swiperOption">
-                <swiper-slide>
-                    <img class="gallary-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/40a54af2-b40d-4f61-9404-c66a54f2382b.jpg_r_1280x840x90_d786a8a0.jpg" />
+                <swiper-slide v-for="(item,index) in imgs" :key="index">
+                    <img class="gallary-img" :src="item" />
                 </swiper-slide>
-                <swiper-slide>
-                    <img class="gallary-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/e4c053ae-6972-4b1a-b4db-b0c6b35f7307.jpg_r_1280x840x90_904f730c.jpg" />
-                </swiper-slide>
-                <div class="swiper-pagination"  slot="paginationImage"></div>
+                <div class="swiper-pagination"  slot="pagination"></div>
             </swiper>
+            
+        </div>
+        <div class="gallary-hide">
+            <img class="gallary-hide-img" src="@styles/../cancel.png"/>
         </div>
     </div>
 </template>
@@ -21,15 +22,33 @@ export default {
     data () {
         return{
             swiperOption: {
-                paginationImage: '.swiper-pagination',
-                paginationType: 'fraction'
+                pagination: '.swiper-pagination',
+                paginationType: 'fraction',
+                observeParents: true,
+                observer: true
             }
+        }
+    },
+    props: {
+        imgs: {
+            type: Array,
+            default () {
+                return []
+            }
+        }
+    },
+    methods: {
+        handleGallaryClick () {
+            // console.log("111")
+            this.$emit('close')
         }
     }
 }
 </script>
 
 <style lang="stylus" scoped>
+    .container >>> .swiper-container
+        overflow: inherit
     .container
         display: flex
         flex-direction: column
@@ -42,7 +61,6 @@ export default {
         z-index: 99
         background: #000
         .wrapper
-            overflow: hidden
             height: 0
             width: 100%
             padding-bottom: 100%
@@ -50,4 +68,17 @@ export default {
                 width: 100%
             .swiper-pagination
                 color: #fff
+                position: fixed
+                top: 1rem
+                left: 9rem
+        .gallary-hide
+            width: 2.5rem
+            height: 2.5rem
+            position: fixed
+            bottom: 1.8rem
+            left: 45%
+            touch-action: none
+            .gallary-hide-img
+                width: 100%
+                touch-action: none
 </style>
