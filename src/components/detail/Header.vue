@@ -53,14 +53,14 @@ export default {
 @import '~@styles/varibles.styl'
     .header-abs
         position: absolute
-        top: .6rem
-        left: .6rem
-        width: 2.8rem
-        height: 2.8rem
-        line-height: 2.8rem
+        top: .4rem
+        left: .4rem
+        width: 2.6rem
+        height: 2.6rem
+        line-height: 2.6rem
         text-align: center
-        border-radius: 1.4rem
-        background: rgba(0,0,0,.8)
+        border-radius: 1.3rem
+        background: rgba(0,0,0,.6)
         .back-icon
             color: #fff
             font-size: 1.5rem
