@@ -1,16 +1,16 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/0ffb526f-d7fc-49fe-99db-5702d38f6cd6.jpg_r_640x420x90_885b480d.jpg" />
+            <img class="banner-img" :src="bannerImg" />
             <div class="banner-info">
-                <div class="banner-title">三亚亚龙湾森林公园</div>
+                <div class="banner-title">{{sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe692;</span>
-                    7
+                    {{this.gallaryImgs.length}}
                 </div>
             </div>
         </div>
-        <CommonGallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"/>
+        <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"/>
     </div>
 </template>
 
@@ -24,10 +24,6 @@ export default {
     },
     data () {
         return{
-            imgs: [
-                        'https://img1.qunarzz.com/vs_ceph_vs_tts/40a54af2-b40d-4f61-9404-c66a54f2382b.jpg_r_1280x840x90_d786a8a0.jpg',
-                        'https://img1.qunarzz.com/vs_ceph_vs_tts/e4c053ae-6972-4b1a-b4db-b0c6b35f7307.jpg_r_1280x840x90_904f730c.jpg'
-                    ],
             showGallary: false
         }
     },
@@ -38,6 +34,11 @@ export default {
         handleGallaryClose () {
             this.showGallary = false
         }
+    },
+    props: {
+        sightName: String,
+        bannerImg: String,
+        gallaryImgs: Array
     }
 }
 </script>
@@ -46,7 +47,7 @@ export default {
     .banner
         overflow: hidden
         height: 0
-        padding-bottom: 67%
+        padding-bottom: 55%
         position: relative
         .banner-img
            width: 100%
